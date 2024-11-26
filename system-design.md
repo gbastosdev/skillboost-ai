@@ -30,59 +30,57 @@ A arquitetura será baseada em **microserviços** para maior escalabilidade e mo
 ## 3. Componentes do Sistema
 
 ### **Frontend (Client):**
-- **Tecnologia:** React (ou Next.js para SSR se necessário).
+- **Tecnologia:** React-Native.
 - **Responsabilidade:**
-  - Interface do usuário para login, navegação e desafios.
-  - Consumo de APIs para exibir desafios e feedback.
-  - Atualização em tempo real do progresso e ranking.
+  - Interface do usuário para desafios. (login e navegação -> próximas etapas)
+  - Consumo de APIs para exibir desafios.
+  <!-- - Atualização em tempo real do progresso e ranking. -->
 
 ### **Backend:**
 
 #### **API Gateway:**
-- **Tecnologia:** FastAPI ou Flask com suporte a **GraphQL/REST APIs**.
+- **Tecnologia:** FastAPI -> **GraphQL/REST APIs**.
 - **Função:**
   - Roteamento das requisições para os microserviços corretos.
-  - Gerenciamento de autenticação e autorização.
+  <!-- - Gerenciamento de autenticação e autorização. -->
 
 #### **Microserviços Principais:**
-1. **User Service:**
-   - Gerencia contas, autenticação (OAuth 2.0/JWT), perfis e configurações.
-   - Integração com serviços externos (Google, GitHub).
-   - Banco: MongoDB ou PostgreSQL.
 
-2. **Challenge Service:**
+1. **Challenge Service:**
    - Gerencia a criação e o armazenamento dos desafios.
    - Define os níveis de dificuldade (fácil, médio, difícil).
    - Alternância lógica entre front-end e back-end.
    - Banco: PostgreSQL para persistência.
 
-3. **AI Service:**
+2. **AI Service:**
    - Modelo baseado no GPT (ou similar) para gerar desafios dinâmicos.
    - Feedback personalizado com base no envio do usuário.
    - Treinamento adicional com base nos resultados dos desafios dos usuários.
+   - Auxílio com o usuário, através de uma aba, que poderá enviar dicas para ajudá-lo no processo.
 
-4. **Gamification Service:**
-   - Calcula pontuações, distribui badges e mantém rankings.
-   - Banco: Redis (cache) para baixa latência em rankings.
+<!-- 1. **User Service:**
+   - Gerencia contas, autenticação (OAuth 2.0/JWT), perfis e configurações.
+   - Integração com serviços externos (Google, GitHub).
+   - Banco: MongoDB ou PostgreSQL. -->
 
-5. **Analytics Service:**
+<!-- 2. **Analytics Service:**
    - Gera relatórios de progresso para usuários e empresas.
-   - Banco: BigQuery (ou semelhante) para análises em larga escala.
+   - Banco: BigQuery (ou semelhante) para análises em larga escala. -->
 
 ---
 
 ## 4. Fluxo de Dados
 
-1. **Usuário Loga no Sistema:**
-   - Frontend -> API Gateway -> User Service.
-   - Autenticação via JWT.
-
 2. **Requisição de um Novo Desafio:**
    - Frontend -> API Gateway -> Challenge Service.
-   - Challenge Service consulta o AI Service para gerar um desafio.
-   - Desafio é armazenado no banco e retornado ao usuário.
+   - Challenge Service consulta o AI Service para gerar um desafio e armazenar no banco.
+   - Desafio é retornado ao usuário.
 
-3. **Envio de Solução:**
+<!-- 1. **Usuário Loga no Sistema:**
+   - Frontend -> API Gateway -> User Service.
+   - Autenticação via JWT. -->
+
+<!-- 3. **Envio de Solução:**
    - Usuário envia solução via Frontend.
    - API Gateway -> Challenge Service -> AI Service.
    - AI Service avalia, retorna feedback e armazena o resultado.
@@ -92,18 +90,18 @@ A arquitetura será baseada em **microserviços** para maior escalabilidade e mo
    - Redis atualiza ranking em tempo real.
 
 5. **Relatórios de Progresso:**
-   - Analytics Service processa e fornece relatórios via API Gateway.
+   - Analytics Service processa e fornece relatórios via API Gateway. -->
 
 ---
 
 ## 5. Diagrama Resumido
 
 1. **Frontend:**
-   - React -> Consome APIs.
+   - React-Native -> Consome APIs.
 
 2. **Backend:**
-   - Microserviços: User, Challenge, Gamification, AI, Analytics.
-   - Banco de Dados: MongoDB, PostgreSQL, Redis.
+   - Microserviços: Challenge e AI.
+   - Banco de Dados: MongoDB.
 
 3. **Infraestrutura:**
    - Docker, Kubernetes, AWS (EC2, S3, RDS).
@@ -113,7 +111,7 @@ A arquitetura será baseada em **microserviços** para maior escalabilidade e mo
 
 ---
 
-## 6. Segurança
+<!-- ## 6. Segurança
 
 1. **Autenticação:**
    - OAuth 2.0 + JWT para login seguro.
@@ -123,11 +121,11 @@ A arquitetura será baseada em **microserviços** para maior escalabilidade e mo
    - Criptografia de senhas (bcrypt).
 
 3. **Controle de Acesso:**
-   - Roles (usuário comum, empresa).
+   - Roles (usuário comum, empresa). -->
 
 ---
 
-## 7. Escalabilidade e Alta Disponibilidade
+<!-- ## 7. Escalabilidade e Alta Disponibilidade
 
 1. **Load Balancer:**
    - Distribui tráfego entre instâncias backend.
@@ -139,6 +137,6 @@ A arquitetura será baseada em **microserviços** para maior escalabilidade e mo
    - Redis para acelerar respostas de dados acessados com frequência.
 
 4. **CDN:**
-   - Para entrega rápida de conteúdo estático.
+   - Para entrega rápida de conteúdo estático. -->
 
 ---
