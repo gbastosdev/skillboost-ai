@@ -50,7 +50,7 @@ A arquitetura será baseada em **microserviços** para maior escalabilidade e mo
    - Gerencia a criação e o armazenamento dos desafios.
    - Define os níveis de dificuldade (fácil, médio, difícil).
    - Alternância lógica entre front-end e back-end.
-   - Banco: PostgreSQL para persistência.
+   - Banco: MongoDB.
 
 2. **AI Service:**
    - Modelo baseado no GPT (ou similar) para gerar desafios dinâmicos.
