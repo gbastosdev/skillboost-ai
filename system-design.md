@@ -4,16 +4,16 @@
 
 ### Funcionalidades Básicas:
 1. Geração de desafios diários/semanal alternando front-end/back-end.
-2. Personalização de desafios com base no nível do usuário.
-3. Feedback detalhado da IA sobre as soluções dos desafios.
-4. Sistema de gamificação (pontuação, badges, rankings).
-5. Relatórios de progresso do usuário.
-6. Sistema de login e gerenciamento de contas.
+2. Auxílio de AI para solução do problema.
+### Próximas features:
+1. Personalização de desafios com base no nível do usuário.
+2. Sistema de gamificação (pontuação, badges, rankings).
+3. Relatórios de progresso do usuário.
+4. Sistema de login e gerenciamento de contas.
 
 ### Não Funcionais:
 1. Alta disponibilidade e escalabilidade para suportar muitos usuários.
 2. Resposta rápida na geração de desafios.
-3. Segurança de dados do usuário (autenticação, criptografia).
 
 ---
 
