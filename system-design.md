@@ -109,8 +109,6 @@ A arquitetura será baseada em **microserviços** para maior escalabilidade e mo
 4. **Fluxo Exemplo:**
    - Requisição -> Gateway -> Microserviço -> AI/DB -> Resposta.
 
----
-
 <!-- ## 6. Segurança
 
 1. **Autenticação:**
@@ -122,8 +120,6 @@ A arquitetura será baseada em **microserviços** para maior escalabilidade e mo
 
 3. **Controle de Acesso:**
    - Roles (usuário comum, empresa). -->
-
----
 
 <!-- ## 7. Escalabilidade e Alta Disponibilidade
 
@@ -138,5 +134,3 @@ A arquitetura será baseada em **microserviços** para maior escalabilidade e mo
 
 4. **CDN:**
    - Para entrega rápida de conteúdo estático. -->
-
----
