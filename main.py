@@ -1,10 +1,6 @@
-import os
 from fastapi import FastAPI
-import motor.motor_asyncio
+from routers import main_router
 
 app = FastAPI(title="Skillboost-AI")
-client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app.mount("/", app=main_router)
