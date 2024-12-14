@@ -8,9 +8,19 @@
             "name": "Python Debugger: Current File",
             "type": "debugpy",
             "request": "launch",
-            "module": "uvicorn",
-            "cwd": "${workspaceFolder}/challenge-service",
-            "args": ["main:app","--reload"],
-        }
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        // {
+        //     "name": "Python Debugger: Current File",
+        //     "type": "debugpy",
+        //     "request": "launch",
+        //     "module": "uvicorn",
+        //     "cwd": "${workspaceFolder}/challenge-service",
+        //     "args": [
+        //         "main:app",
+        //         "--reload"
+        //     ],
+        // }
     ]
 }
