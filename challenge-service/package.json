@@ -1,0 +1,28 @@
+{
+  "name": "challenge-service",
+  "version": "1.0.0",
+  "description": "Service to provide challenge creation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbastosdev/skillboost-ai.git"
+  },
+  "keywords": [
+    "SkillBoost",
+    "AI"
+  ],
+  "type": "module",
+  "author": "Gabriel Bastos de Freitas and Fabio Chebabe Carnelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbastosdev/skillboost-ai/issues"
+  },
+  "homepage": "https://github.com/gbastosdev/skillboost-ai#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.9.2"
+  }
+}
