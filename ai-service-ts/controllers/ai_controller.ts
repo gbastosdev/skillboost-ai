@@ -17,6 +17,8 @@ async function chat(){
   });
 } 
 
-chat().then((result)=>{
-    console.log(result.choices[0].message)
+var final_result = chat().then((result)=>{
+  console.log(result.choices[0].message)
 })
+
+export default final_result

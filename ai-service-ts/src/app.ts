@@ -1,10 +1,11 @@
 import express, { Request, Response } from 'express';
+import ai_message from '../controllers/ai_controller'
 
 const app = express();
 const port = 3000;
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, TypeScript with Node.js!');
+  res.send(ai_message);
 });
 
 app.listen(port, () => {

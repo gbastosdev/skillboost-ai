@@ -1,28 +1,26 @@
 {
   "name": "challenge-service",
   "version": "1.0.0",
-  "description": "Service to provide challenge creation.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/app.ts",
+    "build": "tsc",
+    "serve": "node dist/app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gbastosdev/skillboost-ai.git"
-  },
-  "keywords": [
-    "SkillBoost",
-    "AI"
-  ],
-  "type": "module",
+  "keywords": [],
   "author": "Gabriel Bastos de Freitas and Fabio Chebabe Carnelli",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gbastosdev/skillboost-ai/issues"
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   },
-  "homepage": "https://github.com/gbastosdev/skillboost-ai#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongoose": "^8.9.2"
+    "mongodb": "^6.12.0"
   }
 }
