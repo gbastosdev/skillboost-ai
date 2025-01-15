@@ -5,7 +5,12 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req: Request, res: Response) => {
-  res.send(ai_message);
+  var final_message = String()
+  ai_message.then((async (result)=>{
+    final_message = await result.choices[0].message.content 
+    res.send({"AI_Message": final_message});
+  }))
+  
 });
 
 app.listen(port, () => {

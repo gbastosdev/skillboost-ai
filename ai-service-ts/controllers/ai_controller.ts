@@ -2,7 +2,7 @@ import { HfInference } from "@huggingface/inference";
 import dotenv from 'dotenv'
 dotenv.config({path: 'C:/Users/GabrielBastos/Desktop/git/skillboost-ai/.env'})
 
-const client = new HfInference();
+const client = new HfInference(process.env.HF_KEY);
 
 async function chat(){
   return await client.chatCompletion({
@@ -10,15 +10,11 @@ async function chat(){
     messages: [
       {
         role: "user",
-        content: "What is the capital of France?"
+        content: "Create a simple monthly challenge to developers. This is aimed to enhance experience to devs. Keep in mind that you have to provide this challenge the finest way to the developers."
       }
     ],
     max_tokens: 500
   });
 } 
 
-var final_result = chat().then((result)=>{
-  console.log(result.choices[0].message)
-})
-
-export default final_result
+export default chat()
