@@ -1,6 +1,7 @@
 import { HfInference } from "@huggingface/inference";
 import dotenv from 'dotenv'
-dotenv.config({path: 'C:/Users/GabrielBastos/Desktop/git/skillboost-ai/.env'})
+import path from 'path'
+dotenv.config({ path: path.resolve(__dirname, '../../.env')})
 
 const client = new HfInference(process.env.HF_KEY);
 
@@ -10,7 +11,7 @@ async function chat(){
     messages: [
       {
         role: "user",
-        content: "Create a simple monthly challenge to developers. This is aimed to enhance experience to devs. Keep in mind that you have to provide this challenge the finest way to the developers."
+        content: "Create a simple monthly challenge to developers. This is aimed to enhance experience to devs. Also, you have to generate this text on a concise way with few lines. Generate this message on english version."
       }
     ],
     max_tokens: 500
