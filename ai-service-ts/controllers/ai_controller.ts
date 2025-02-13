@@ -1,21 +1,39 @@
-import { HfInference } from "@huggingface/inference";
-import dotenv from 'dotenv'
-import path from 'path'
-dotenv.config({ path: path.resolve(__dirname, '../../.env')})
+import axios from 'axios'
 
-const client = new HfInference(process.env.HF_KEY);
+class AIController{
 
-async function chat(){
-  return await client.chatCompletion({
-    model: "Qwen/QwQ-32B-Preview",
-    messages: [
-      {
-        role: "user",
-        content: "Create a simple monthly challenge to developers. This is aimed to enhance experience to devs. Also, you have to generate this text on a concise way with few lines. Generate this message on english version."
+  requestObject = {}
+  constructor(){
+    this.requestObject = {
+      model: "tinyllama",
+      messages: [{
+          role: "user",
+          content: "Create a simple monthly challenge to developers. Create this challenge with less than 500 characters."
+        }],
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      stream: false
+    }
+  }
+
+  public async create_chat(){
+    try {
+      const {data, status} = await axios.post('http://localhost:11432/api/chat', this.requestObject)
+      console.log('Status returned:', status)
+      return data
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.log('error message: ', error.message);
+        return error.message;
+      } else {
+        console.log('unexpected error: ', error);
+        return 'An unexpected error occurred';
       }
-    ],
-    max_tokens: 500
-  });
-} 
+    }
+  } 
+}
 
-export default chat()
+const AIControllerInstance = new AIController();
+
+export default AIControllerInstance;
